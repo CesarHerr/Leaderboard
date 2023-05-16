@@ -13,19 +13,19 @@ h2 {
 }
 
 .container {
-  display: flex;  
+  display: flex;
   margin: auto;
   width: 80%;
-  padding: 1em; 
+  padding: 1em;
 }
 
 .scores {
-  width: 60%; 
+  width: 60%;
 }
 
 form {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
 }
 
 ul {
