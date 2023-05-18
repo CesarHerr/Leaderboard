@@ -1,14 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  background: hsl(200, 70%, 70%);;
+}
+
 h1 {
+  font-family: 'Fugaz One', cursive;
+  text-shadow: .1em .1em 0 hsl(200 50% 30%);
+  color: hsl(200 50% 90%);
+  font-size: 5rem;
+  margin: 0.5em 0;
   padding-left: 5em;
+  line-height: 1.1;
+  max-inline-size: 15ch;
+  font-weight: bolder;
 }
 
 h2 {
+  font-family: 'Fugaz One', cursive;
+  color: hsl(200 50% 90%);
+  text-shadow: .1em .1em 0 hsl(200 50% 30%);
+  font-size: 2.5rem;
+  padding-top: 100px;  
   display: inline;
 }
 
@@ -29,5 +48,58 @@ form {
 }
 
 ul {
+  margin-top: 1em;
   list-style: none;
+  width: 80%;
+  border: solid 3px red;
+  border-radius: 0.8rem;
+  box-shadow:
+  -17.9px -17.9px 39.4px -23px rgba(0, 0, 0, 0.168),
+  -24.4px -24.4px 67.9px -23px rgba(0, 0, 0, 0.256),
+  94px 94px 94px -23px rgba(0, 0, 0, 0.24)
+;
+}
+
+li {  
+  padding: 0.5em 0.5em;
+  font-size: 1.5rem;  
+  display: flex;
+  justify-content: space-between;
+}
+
+li:nth-child(odd) {
+  background-color: rgba(199, 199, 237, 0.479);
+  border-radius: 0.3rem;
+}
+
+.score {
+  font-weight: bolder;
+  width: 100px;
+}
+
+section button {
+  font-weight: bolder;
+  width: 20%;
+  padding: 0.5em;
+  margin-left: 2em;
+  border: none;
+  border-radius: 0.5rem;
+  outline: 1px solid;
+  outline-color: rgba(49, 138, 172, 0.4);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+section button:hover {
+   cursor: pointer;
+    box-shadow: inset 0 0 20px rgba(49, 138, 172, 0.5), 0 0 20px rgba(49, 138, 172, 0.4);
+    outline-color: rgba(11, 110, 149, 0);
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff;
+    background-color: rgb(84, 83, 83);
+    transition: all 0.5s ease;
+    color: #fff;
+}
+
+section button:active {
+  background-color: rgb(99, 2, 2);
 }

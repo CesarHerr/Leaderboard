@@ -42,7 +42,7 @@ const displayScores = () => {
     list.innerHTML = result
       .map(
         (data, index) => `
-        <li>${result[index].user}: ${result[index].score}</li>                        
+        <li><span>${result[index].user} :</span> <span class="score">${result[index].score}</span></li>                        
       `,
       )
       .join('');
