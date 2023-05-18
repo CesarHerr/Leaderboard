@@ -65,5 +65,28 @@ const userScore = {
   score: 100,
 };
 
+const userList = async () => {
+  try {
+    const response = await fetch(`${API_URL}/games/${gameId}/scores`);
+    const data = await response.json();    
+    return data;
+  } catch (error) {
+    throw new Error("Error al obtener el ID del juego.");
+  }
+};
+
+userList();
+
+userList().then((data) => {
+  const list = document.querySelector("ul");
+  const {result} = data;
+  list.innerHTML = result
+    .map(
+      (data, index) => `
+        <li>${result[index].user}: ${result[index].score}</li>                        
+      `
+    )
+    .join("");
+});
 
 
