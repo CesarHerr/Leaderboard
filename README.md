@@ -12,8 +12,7 @@
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+    - [Key Features](#key-features) 
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -26,7 +25,6 @@
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
@@ -34,7 +32,7 @@
 # 📖 [ Leaderboard ] <a name="about-project"></a>
 
 
-**[Leaderboard]** The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service (for now it's just the structure).
+**[Leaderboard]** The leaderboard website displays scores submitted by different players. It also allows you to submit your score. All data is preserved thanks to the external Leaderboard API service.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -46,6 +44,7 @@
 3.- Webpack.
 
 4.- CSS.
+
 ```
 
 ### Tech Stack <a name="tech-stack"></a>
@@ -55,6 +54,7 @@
   <ul>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML">HTML</a></li>
     <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+    <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">JavaScript</a></li>
    </ul>
 </details>
 
@@ -64,14 +64,13 @@
 
 
 ```
-- **[application Deploy ]**
+- Send and receive data from an API.
+- Use API documentation.
+- Use JSON.
+- Make JavaScript code asynchronous by using async await.
+- Use Arrow functions.
+
 ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -142,7 +141,7 @@ no test
 You can deploy this project using:
 
 
-[Implementation](https://github.com/microverseinc/curriculum-javascript/blob/main/todo-list/m1_list_structure.md) 
+[Implementation](https://github.com/microverseinc/curriculum-javascript/blob/main/leaderboard/m2_send_receive_data.md) 
 
 
 
@@ -167,7 +166,9 @@ You can deploy this project using:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- send and receive data from API.
+- Add styles to the project.
+- Make it responsive.
+- Add new Games.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
