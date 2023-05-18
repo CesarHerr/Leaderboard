@@ -39,7 +39,7 @@ const displayScores = () => {
   userList().then((data) => {
     const list = document.querySelector('ul');
     const { result } = data;
-    list.innerHTML = result
+    list.innerHTML = result.sort((a, b) => b.score - a.score)
       .map(
         (data, index) => `
         <li><span>${result[index].user} :</span> <span class="score__saved">${result[index].score}</span></li>                        
