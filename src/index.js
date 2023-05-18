@@ -23,7 +23,7 @@ userInput.placeholder = 'Your name';
 
 const scoreInput = document.createElement('input');
 scoreInput.classList.add('score');
-scoreInput.type = 'text';
+scoreInput.type = 'number';
 scoreInput.placeholder = 'Your Score';
 
 const scoreBtn = document.createElement('button');
@@ -40,7 +40,7 @@ scoreBtn.addEventListener('click', (event) => {
   const takeUser = document.querySelector('.user').value;
   const takeScore = document.querySelector('.score').value;
 
-  if (takeScore !== '' && takeUser !== '' && /^[0-9]*$/.test(takeScore)) {
+  if (takeScore !== '' && takeUser !== '') {
     addScore(takeUser, takeScore);
     document.querySelector('.user').value = '';
     document.querySelector('.score').value = '';

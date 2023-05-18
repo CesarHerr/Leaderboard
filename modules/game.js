@@ -19,7 +19,7 @@ const addGame = async () => {
       const gameId = data.result.match(/(\w+){10,}/gi);
       return gameId[0];
     }
-    throw new Error('Error al obtener el ID del juego.');
+    throw new Error('The Id can not be Created!');
   } catch (error) {
     throw new Error('Game not found!');
   }
