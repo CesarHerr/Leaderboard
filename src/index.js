@@ -15,8 +15,8 @@ recentScore.appendChild(subTitle);
 recentScore.appendChild(refreshBtn);
 recentScore.appendChild(list);
 
-const addTitle = document.createElement('h2')
-addTitle.innerHTML = 'Add New Score'
+const addTitle = document.createElement('h2');
+addTitle.innerHTML = 'Add New Score';
 const form = document.createElement('form');
 const userInput = document.createElement('input');
 userInput.classList.add('user');
@@ -31,7 +31,6 @@ scoreInput.placeholder = 'Your Score';
 const scoreBtn = document.createElement('button');
 scoreBtn.innerText = 'Submit';
 scoreBtn.classList.add('submit-btn');
-
 
 main.appendChild(form);
 form.appendChild(addTitle);
