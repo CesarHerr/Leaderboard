@@ -1,5 +1,5 @@
 import "./style.css";
-// import scoreList from '../modules/scores.js';
+import { addScore, displayScores } from "../modules/scores.js";
 
 const main = document.querySelector(".container");
 const recentScore = document.createElement("section");
@@ -35,70 +35,18 @@ form.appendChild(userInput);
 form.appendChild(scoreInput);
 form.appendChild(scoreBtn);
 
-const gameId = "teDaNoamOeQKbWVsOgKb";
-const API_URL =
-  "https://us-central1-js-capstone-backend.cloudfunctions.net/api";
-
-//Add user and score to the Game
-const addScore = async (user, score) => {
-  try {
-    const response = await fetch(`${API_URL}/games/${gameId}/scores`, {
-      method: "POST",
-      body: JSON.stringify({
-        user: user,
-        score: score,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-    });
-
-    const data = await response.json();
-
-    return data;
-  } catch (error) {
-    throw new Error("Error al obtener el ID del juego.");
-  }
-};
-
 scoreBtn.addEventListener("click", (event) => {
   event.preventDefault();
   const takeUser = document.querySelector(".user").value;
   const takeScore = document.querySelector(".score").value;
 
-  if (takeScore !== "" && takeUser !== "") {
+  if (takeScore !== "" && takeUser !== "" && /^[0-9]*$/.test(takeScore)) {
     addScore(takeUser, takeScore);
     document.querySelector(".user").value = "";
     document.querySelector(".score").value = "";
   }
 });
 
-const userList = async () => {
-  try {
-    const response = await fetch(`${API_URL}/games/${gameId}/scores`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    throw new Error("Game not found!!!.");
-  }
-};
-
-const displayScores = () => {
-  userList().then((data) => {
-    const list = document.querySelector("ul");
-    const { result } = data;
-    list.innerHTML = result
-      .map(
-        (data, index) => `
-        <li>${result[index].user}: ${result[index].score}</li>                        
-      `
-      )
-      .join("");
-  });
-};
-
-refreshBtn.addEventListener('click', () => {
+refreshBtn.addEventListener("click", () => {
   displayScores();
-})
-
-
+});
