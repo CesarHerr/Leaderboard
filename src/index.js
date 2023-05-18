@@ -15,13 +15,11 @@ recentScore.appendChild(subTitle);
 recentScore.appendChild(refreshBtn);
 recentScore.appendChild(list);
 
-// scoreList();
-
 const form = document.createElement("form");
-const nameInput = document.createElement("input");
-nameInput.classList.add("name");
-nameInput.type = "text";
-nameInput.placeholder = "Your name";
+const userInput = document.createElement("input");
+userInput.classList.add("user");
+userInput.type = "text";
+userInput.placeholder = "Your name";
 
 const scoreInput = document.createElement("input");
 scoreInput.classList.add("score");
@@ -33,7 +31,7 @@ scoreBtn.innerText = "Submit";
 scoreBtn.classList.add("submit-btn");
 
 main.appendChild(form);
-form.appendChild(nameInput);
+form.appendChild(userInput);
 form.appendChild(scoreInput);
 form.appendChild(scoreBtn);
 
@@ -42,11 +40,14 @@ const API_URL =
   "https://us-central1-js-capstone-backend.cloudfunctions.net/api";
 
 //Add user and score to the Game
-const addGame = async (userScore) => {
+const addScore = async (user, score) => {
   try {
     const response = await fetch(`${API_URL}/games/${gameId}/scores`, {
       method: "POST",
-      body: JSON.stringify(userScore),
+      body: JSON.stringify({
+        user: user,
+        score: score,
+      }),
       headers: {
         "Content-type": "application/json; charset=UTF-8",
       },
@@ -60,33 +61,44 @@ const addGame = async (userScore) => {
   }
 };
 
-const userScore = {
-  user: "jhon who",
-  score: 100,
-};
+scoreBtn.addEventListener("click", (event) => {
+  event.preventDefault();
+  const takeUser = document.querySelector(".user").value;
+  const takeScore = document.querySelector(".score").value;
+
+  if (takeScore !== "" && takeUser !== "") {
+    addScore(takeUser, takeScore);
+    document.querySelector(".user").value = "";
+    document.querySelector(".score").value = "";
+  }
+});
 
 const userList = async () => {
   try {
     const response = await fetch(`${API_URL}/games/${gameId}/scores`);
-    const data = await response.json();    
+    const data = await response.json();
     return data;
   } catch (error) {
-    throw new Error("Error al obtener el ID del juego.");
+    throw new Error("Game not found!!!.");
   }
 };
 
-userList();
-
-userList().then((data) => {
-  const list = document.querySelector("ul");
-  const {result} = data;
-  list.innerHTML = result
-    .map(
-      (data, index) => `
+const displayScores = () => {
+  userList().then((data) => {
+    const list = document.querySelector("ul");
+    const { result } = data;
+    list.innerHTML = result
+      .map(
+        (data, index) => `
         <li>${result[index].user}: ${result[index].score}</li>                        
       `
-    )
-    .join("");
-});
+      )
+      .join("");
+  });
+};
+
+refreshBtn.addEventListener('click', () => {
+  displayScores();
+})
 
 
