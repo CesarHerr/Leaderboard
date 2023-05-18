@@ -5,7 +5,7 @@ const main = document.querySelector('.container');
 const recentScore = document.createElement('section');
 recentScore.classList.add('scores');
 const subTitle = document.createElement('h2');
-subTitle.innerText = 'Recent scores';
+subTitle.innerText = 'Recent Scores';
 const refreshBtn = document.createElement('button');
 refreshBtn.innerText = 'Refresh';
 const list = document.createElement('ul');
@@ -15,6 +15,8 @@ recentScore.appendChild(subTitle);
 recentScore.appendChild(refreshBtn);
 recentScore.appendChild(list);
 
+const addTitle = document.createElement('h2')
+addTitle.innerHTML = 'Add New Score'
 const form = document.createElement('form');
 const userInput = document.createElement('input');
 userInput.classList.add('user');
@@ -30,7 +32,9 @@ const scoreBtn = document.createElement('button');
 scoreBtn.innerText = 'Submit';
 scoreBtn.classList.add('submit-btn');
 
+
 main.appendChild(form);
+form.appendChild(addTitle);
 form.appendChild(userInput);
 form.appendChild(scoreInput);
 form.appendChild(scoreBtn);
