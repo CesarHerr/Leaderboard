@@ -1,33 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h1 {
-  padding-left: 5em;
+html {
+  background: hsl(200, 70%, 70%);
 }
 
-h2 {
-  display: inline;
+h1 {
+  margin: 0.5em 0 0 0.2em;
+  font-family: "Fugaz One", cursive;
+  text-shadow: 0.1em 0.1em 0 hsl(200 50% 30%);
+  color: hsl(200 50% 90%);
+  font-size: 3rem;
+  line-height: 1.1;
+  max-inline-size: 15ch;
+  font-weight: bolder;
 }
 
 .container {
   display: flex;
+  flex-direction: column;
   margin: auto;
-  width: 80%;
-  padding: 1em;
+  width: 90%;
 }
 
-.scores {
-  width: 60%;
+section {
+  margin-top: 1em;
+  order: 2;
+  width: 100%;
+}
+
+h2 {
+  font-family: "Fugaz One", cursive;
+  color: hsl(200 50% 90%);
+  text-shadow: 0.1em 0.1em 0 hsl(200 50% 30%);
+  font-size: 2rem;
+  display: inline;
 }
 
 form {
+  margin-top: 2em;
   display: flex;
   flex-direction: column;
 }
 
 ul {
+  margin-top: 1em;
   list-style: none;
+  width: 100%;
+  border: solid 3px rgb(51, 68, 151);
+  border-radius: 0.8rem;
+  box-shadow:
+    -17.9px -17.9px 39.4px -23px rgba(0, 0, 0, 0.168),
+    -24.4px -24.4px 67.9px -23px rgba(0, 0, 0, 0.256),
+    94px 94px 94px -23px rgba(0, 0, 0, 0.24);
+}
+
+form input {
+  border: none;
+  margin: 0.1em 0;
+  padding: 0.5rem 0.3rem;
+  border-radius: 0.5rem;
+}
+
+button {
+  font-weight: bolder;
+  width: 100%;
+  padding: 0.5em;
+  border: none;
+  border-radius: 0.5rem;
+  outline: 1px solid;
+  outline-color: rgba(49, 138, 172, 0.4);
+  transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+li {
+  padding: 0.5em 0.5em;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+li:nth-child(odd) {
+  background-color: rgba(199, 199, 237, 0.479);
+  border-radius: 0.3rem;
+}
+
+.score__saved {
+  font-weight: bolder;
+  width: 100px;
+}
+
+button:hover {
+  cursor: pointer;
+  box-shadow:
+    inset 0 0 20px rgba(49, 138, 172, 0.5),
+    0 0 20px rgba(49, 138, 172, 0.4);
+  outline-color: rgba(11, 110, 149, 0);
+  outline-offset: 80px;
+  text-shadow: 1px 1px 6px #fff;
+  background-color: rgb(84, 83, 83);
+  transition: all 0.5s ease;
+  color: #fff;
+}
+
+section button:active {
+  background-color: rgb(99, 2, 2);
+}
+
+@media only screen and (min-width: 767px) {
+  h1 {
+    margin: 1em 0 0 1em;
+    font-size: 5rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1em;
+    width: 80%;
+  }
+
+  section {
+    min-width: 400px;
+    margin-top: 1em;
+    width: 50%;
+    order: 1;
+  }
+
+  form {
+    order: 2;
+    width: 30%;
+  }
+
+  form input {
+    padding: 0.6rem 0.3rem;
+    font-size: 1.4rem;
+  }
+
+  button {
+    width: 50%;
+    padding: 1em 0.5em;
+  }
+
+  section button {
+    width: 30%;
+    margin-left: 4em;
+  }
 }
