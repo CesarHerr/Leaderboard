@@ -1,4 +1,4 @@
-const gameId = 'Ig4ETGpwJuR6naqbH0we';
+const gameId = 'Ig4ETGpwJuR6naqbH0wi';
 const API_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api';
 
 // Add user and score to the Game

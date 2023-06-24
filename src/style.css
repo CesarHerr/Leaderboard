@@ -80,7 +80,7 @@ button {
 
 li {
   padding: 0.5em 0.5em;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -91,8 +91,12 @@ li:nth-child(odd) {
 }
 
 .score__saved {
+  display: flex;
+  justify-content: flex-end;
   font-weight: bolder;
-  width: 100px;
+  width: 50%;
+  min-width: 150px;
+  overflow: hidden;
 }
 
 button:hover {
@@ -110,6 +114,14 @@ button:hover {
 
 section button:active {
   background-color: rgb(99, 2, 2);
+}
+
+form p {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: rgb(51, 68, 151);
+  font-weight: bolder;
 }
 
 @media only screen and (min-width: 767px) {
