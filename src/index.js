@@ -33,11 +33,14 @@ const scoreBtn = document.createElement('button');
 scoreBtn.innerText = 'Submit';
 scoreBtn.classList.add('submit-btn');
 
+const info = document.createElement('p');
+
 main.appendChild(form);
 form.appendChild(addTitle);
 form.appendChild(userInput);
 form.appendChild(scoreInput);
 form.appendChild(scoreBtn);
+form.appendChild(info);
 
 scoreBtn.addEventListener('click', (event) => {
   event.preventDefault();
@@ -48,16 +51,18 @@ scoreBtn.addEventListener('click', (event) => {
     addScore(takeUser, takeScore);
     document.querySelector('.user').value = '';
     document.querySelector('.score').value = '';
-    const info = document.createElement('p');
     info.innerText = ' Your Score was Saved !! ';
-    form.appendChild(info);
   } else {
-    const info = document.createElement('p');
-    info.innerText = 'Add your name and Score, Max score 999999 '
-    form.appendChild(info);
+    info.innerText = '"Add your name and Score, Max score 999999."';
   }
 });
 
 refreshBtn.addEventListener('click', () => {
   displayScores();
 });
+
+userInput.addEventListener('click', () => {
+  info.innerText = '';
+});
+
+displayScores();
