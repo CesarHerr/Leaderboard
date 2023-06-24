@@ -18,6 +18,7 @@ recentScore.appendChild(list);
 const addTitle = document.createElement('h2');
 addTitle.innerHTML = 'Add New Score';
 const form = document.createElement('form');
+
 const userInput = document.createElement('input');
 userInput.classList.add('user');
 userInput.type = 'text';
@@ -43,10 +44,17 @@ scoreBtn.addEventListener('click', (event) => {
   const takeUser = document.querySelector('.user').value.trim();
   const takeScore = document.querySelector('.score').value.trim();
 
-  if (takeScore !== '' && takeUser !== '') {
+  if (takeScore !== '' && takeUser !== '' && takeScore > 0 && takeScore <= 999999) {
     addScore(takeUser, takeScore);
     document.querySelector('.user').value = '';
     document.querySelector('.score').value = '';
+    const info = document.createElement('p');
+    info.innerText = ' Your Score was Saved !! ';
+    form.appendChild(info);
+  } else {
+    const info = document.createElement('p');
+    info.innerText = 'Add your name and Score, Max score 999999 '
+    form.appendChild(info);
   }
 });
 
