@@ -40,8 +40,8 @@ form.appendChild(scoreBtn);
 
 scoreBtn.addEventListener('click', (event) => {
   event.preventDefault();
-  const takeUser = document.querySelector('.user').value;
-  const takeScore = document.querySelector('.score').value;
+  const takeUser = document.querySelector('.user').value.trim();
+  const takeScore = document.querySelector('.score').value.trim();
 
   if (takeScore !== '' && takeUser !== '') {
     addScore(takeUser, takeScore);
